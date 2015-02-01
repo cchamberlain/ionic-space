@@ -4,7 +4,7 @@
   "description": "space: An Ionic project",
   "engines": {
     "node": "0.10.x",
-    "npm": "1.4.x"
+    "npm": "2.3.x"
   },
   "dependencies": {
     "gulp": "^3.5.6",
