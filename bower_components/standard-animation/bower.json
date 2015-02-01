@@ -1,0 +1,27 @@
+{
+  "name": "standard-animation",
+  "version": "0.0.0",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Animation related directives and services for standard libraries.",
+  "main": ["./standard-animation.config.js", "./standard-animation.directives.js", "./standard-services.directives.js"],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "animation",
+    "directives",
+    "services"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

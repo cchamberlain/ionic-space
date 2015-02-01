@@ -1,0 +1,29 @@
+<ion-view title="Build - {{ship.name}}">
+    <ion-content>
+        <div class="list">
+            <label class="item">
+                <h2>id: {{ship.id}}</h2>
+            </label>
+            <label class="item">
+                <h2>mass: {{shipMass}}</h2>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">ship name</span>
+                <input type="text" placeholder="ship name" ng-model="ship.name">
+            </label>
+            <label class="item item-divider">
+                parts
+            </label>
+            <label class="item" ng-repeat="part in parts">
+                <h2>name: {{part.name}}</h2>
+                <h3>type: {{part.type}}</h3>
+                <h3>mass: {{part.mass}}</h3>
+            </label>
+            <label class="item">
+                <button class="button button-block button-positive" ui-sref="tab.space({shipId: ship.id})">
+                    Launch
+                </button>
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

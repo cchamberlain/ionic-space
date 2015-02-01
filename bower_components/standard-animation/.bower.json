@@ -1,0 +1,41 @@
+{
+  "name": "standard-animation",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Animation related directives and services for standard libraries.",
+  "main": [
+    "./standard-animation.config.js",
+    "./standard-animation.directives.js",
+    "./standard-services.directives.js"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "animation",
+    "directives",
+    "services"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/cchamberlain/standard-animation",
+  "_release": "070440929e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "070440929eebff5cccfa7bf1d70b67d59f5e12fd"
+  },
+  "_source": "git://github.com/cchamberlain/standard-animation.git",
+  "_target": "*",
+  "_originalSource": "cchamberlain/standard-animation",
+  "_direct": true
+}

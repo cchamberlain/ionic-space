@@ -1,0 +1,13 @@
+<ion-view title="Build">
+    <ion-content>
+        <ion-list>
+            <button class="button button-block button-positive" ui-sref="tab.build.ship({shipId: -1})">
+                New Ship
+            </button>
+            <button class="button button-block button-positive"
+                      ng-repeat="ship in ships" ui-sref="tab.build.ship({shipId: ship.id})">
+                {{ship.name}}: [mass: {{getMassForShip(ship)}}]
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-view>
