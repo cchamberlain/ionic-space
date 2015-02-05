@@ -1,18 +1,18 @@
 {
-  "name": "standard-animation",
+  "name": "standard-metrics",
   "version": "0.0.0",
   "authors": [
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
-  "description": "Animation related directives and services for standard libraries.",
-  "main": "./standard-animation.js",
+  "description": "Metrics related directives and services for standard libraries.",
+  "main": ["./standard-metrics.js", "./templates/standard-chart-panel.html"],
   "moduleType": [
     "es6"
   ],
   "keywords": [
     "angular",
     "standard",
-    "animation",
+    "metrics",
     "directives",
     "services"
   ],

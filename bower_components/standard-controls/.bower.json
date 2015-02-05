@@ -1,0 +1,41 @@
+{
+  "name": "standard-controls",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Control related directives and services for standard libraries.",
+  "main": [
+    "./standard-controls.js",
+    "./templates/standard-dots.html",
+    "./templates/standard-select.html"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "controls",
+    "directives",
+    "services"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/cchamberlain/standard-controls",
+  "_release": "10e71c2a56",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "10e71c2a562de5d809dcbdbcd9b8f0cb92f7bbe4"
+  },
+  "_source": "git://github.com/cchamberlain/standard-controls.git",
+  "_target": "*",
+  "_originalSource": "cchamberlain/standard-controls",
+  "_direct": true
+}

@@ -3,5 +3,13 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-beta.14"
+  },
+  "dependencies": {
+    "space": "cchamberlain/space",
+    "standard-boilerplate": "cchamberlain/standard-boilerplate",
+    "standard-controls": "cchamberlain/standard-controls",
+    "standard-data": "cchamberlain/standard-data",
+    "standard-metrics": "cchamberlain/standard-metrics",
+    "standard-animation": "cchamberlain/standard-animation"
   }
 }

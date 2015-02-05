@@ -1,0 +1,43 @@
+{
+  "name": "standard-boilerplate",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Boilerplate related directives and services for standard libraries.",
+  "main": [
+    "./standard-boilerplate.js",
+    "./templates/standard-boilerplate-head.html"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "boilerplate",
+    "directives",
+    "services",
+    "google",
+    "facebook",
+    "analytics"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/cchamberlain/standard-boilerplate",
+  "_release": "27e9816cde",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "27e9816cde4fb15bbb901536d06f220e34863ede"
+  },
+  "_source": "git://github.com/cchamberlain/standard-boilerplate.git",
+  "_target": "*",
+  "_originalSource": "cchamberlain/standard-boilerplate",
+  "_direct": true
+}

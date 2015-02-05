@@ -1,18 +1,18 @@
 {
-  "name": "standard-animation",
+  "name": "standard-controls",
   "version": "0.0.0",
   "authors": [
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
-  "description": "Animation related directives and services for standard libraries.",
-  "main": "./standard-animation.js",
+  "description": "Control related directives and services for standard libraries.",
+  "main": ["./standard-controls.js", "./templates/standard-dots.html", "./templates/standard-select.html"],
   "moduleType": [
     "es6"
   ],
   "keywords": [
     "angular",
     "standard",
-    "animation",
+    "controls",
     "directives",
     "services"
   ],

@@ -1,0 +1,40 @@
+{
+  "name": "standard-metrics",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Metrics related directives and services for standard libraries.",
+  "main": [
+    "./standard-metrics.js",
+    "./templates/standard-chart-panel.html"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "metrics",
+    "directives",
+    "services"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/cchamberlain/standard-metrics",
+  "_release": "c35d5e4267",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c35d5e4267c45cf096f672f06947f29b28f75e39"
+  },
+  "_source": "git://github.com/cchamberlain/standard-metrics.git",
+  "_target": "*",
+  "_originalSource": "cchamberlain/standard-metrics",
+  "_direct": true
+}

@@ -1,20 +1,23 @@
 {
-  "name": "standard-animation",
+  "name": "standard-boilerplate",
   "version": "0.0.0",
   "authors": [
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
-  "description": "Animation related directives and services for standard libraries.",
-  "main": "./standard-animation.js",
+  "description": "Boilerplate related directives and services for standard libraries.",
+  "main": ["./standard-boilerplate.js", "./templates/standard-boilerplate-head.html"],
   "moduleType": [
     "es6"
   ],
   "keywords": [
     "angular",
     "standard",
-    "animation",
+    "boilerplate",
     "directives",
-    "services"
+    "services",
+    "google",
+    "facebook",
+    "analytics"
   ],
   "license": "MIT",
   "ignore": [

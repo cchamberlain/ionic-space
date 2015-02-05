@@ -1,0 +1,41 @@
+{
+  "name": "standard-data",
+  "authors": [
+    "Cole Chamberlain <cole.chamberlain@gmail.com>"
+  ],
+  "description": "Data related directives and services for standard libraries.",
+  "main": [
+    "./standard-data.js",
+    "./templates/standard-data.html",
+    "./templates/standard-data-config.html"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "standard",
+    "data",
+    "directives",
+    "services"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/cchamberlain/standard-data",
+  "_release": "990bfd1cb0",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "990bfd1cb09e516d378f69a73d32f27e7c6b92f3"
+  },
+  "_source": "git://github.com/cchamberlain/standard-data.git",
+  "_target": "*",
+  "_originalSource": "cchamberlain/standard-data",
+  "_direct": true
+}
