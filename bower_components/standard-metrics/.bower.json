@@ -6,6 +6,7 @@
   "description": "Metrics related directives and services for standard libraries.",
   "main": [
     "./standard-metrics.js",
+    "./standard-metrics.js.map",
     "./templates/standard-chart-panel.html"
   ],
   "moduleType": [
@@ -27,14 +28,13 @@
     "tests"
   ],
   "homepage": "https://github.com/cchamberlain/standard-metrics",
-  "_release": "c35d5e4267",
+  "_release": "c5d5f72093",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c35d5e4267c45cf096f672f06947f29b28f75e39"
+    "commit": "c5d5f72093ddf4336b3282c6bfe9f46d102cd853"
   },
   "_source": "git://github.com/cchamberlain/standard-metrics.git",
   "_target": "*",
-  "_originalSource": "cchamberlain/standard-metrics",
-  "_direct": true
+  "_originalSource": "cchamberlain/standard-metrics"
 }

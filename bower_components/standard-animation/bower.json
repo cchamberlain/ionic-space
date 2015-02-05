@@ -5,7 +5,7 @@
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
   "description": "Animation related directives and services for standard libraries.",
-  "main": "./standard-animation.js",
+  "main": ["./standard-animation.js", "./standard-animation.js.map"],
   "moduleType": [
     "es6"
   ],

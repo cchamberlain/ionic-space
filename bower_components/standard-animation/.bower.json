@@ -4,7 +4,10 @@
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
   "description": "Animation related directives and services for standard libraries.",
-  "main": "./standard-animation.js",
+  "main": [
+    "./standard-animation.js",
+    "./standard-animation.js.map"
+  ],
   "moduleType": [
     "es6"
   ],
@@ -24,14 +27,13 @@
     "tests"
   ],
   "homepage": "https://github.com/cchamberlain/standard-animation",
-  "_release": "d324d30800",
+  "_release": "9b4888d98d",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d324d30800747cf3af18e88bdda7216b3d31bf08"
+    "commit": "9b4888d98d52c3a6070560346c04abaa8dc0421f"
   },
   "_source": "git://github.com/cchamberlain/standard-animation.git",
   "_target": "*",
-  "_originalSource": "cchamberlain/standard-animation",
-  "_direct": true
+  "_originalSource": "cchamberlain/standard-animation"
 }

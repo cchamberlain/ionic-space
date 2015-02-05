@@ -1,3 +1,4 @@
 node_modules/
+bower_src/
 .*.sw*
 .idea/

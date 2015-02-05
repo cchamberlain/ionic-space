@@ -5,7 +5,7 @@
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
   "description": "Space related directives and services for standard libraries.",
-  "main": ["./space.js", "./templates/s-box.html", "./templates/s-part.html", "./templates/s-ship.html", "./templates/s-universe.html", "./templates/s-workshop.html"],
+  "main": ["./space.js", "./space.js.map", "./templates/s-box.html", "./templates/s-part.html", "./templates/s-ship.html", "./templates/s-universe.html", "./templates/s-workshop.html"],
   "moduleType": [
     "es6"
   ],

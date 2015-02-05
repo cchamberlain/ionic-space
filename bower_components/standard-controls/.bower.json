@@ -6,6 +6,7 @@
   "description": "Control related directives and services for standard libraries.",
   "main": [
     "./standard-controls.js",
+    "./standard-controls.js.map",
     "./templates/standard-dots.html",
     "./templates/standard-select.html"
   ],
@@ -28,14 +29,13 @@
     "tests"
   ],
   "homepage": "https://github.com/cchamberlain/standard-controls",
-  "_release": "10e71c2a56",
+  "_release": "659c4f4d6b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "10e71c2a562de5d809dcbdbcd9b8f0cb92f7bbe4"
+    "commit": "659c4f4d6bd671a20cb09c315382819da64ffe61"
   },
   "_source": "git://github.com/cchamberlain/standard-controls.git",
   "_target": "*",
-  "_originalSource": "cchamberlain/standard-controls",
-  "_direct": true
+  "_originalSource": "cchamberlain/standard-controls"
 }

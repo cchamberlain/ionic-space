@@ -5,7 +5,7 @@
     "Cole Chamberlain <cole.chamberlain@gmail.com>"
   ],
   "description": "Control related directives and services for standard libraries.",
-  "main": ["./standard-controls.js", "./templates/standard-dots.html", "./templates/standard-select.html"],
+  "main": ["./standard-controls.js", "./standard-controls.js.map", "./templates/standard-dots.html", "./templates/standard-select.html"],
   "moduleType": [
     "es6"
   ],
