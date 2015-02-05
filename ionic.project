@@ -2,11 +2,10 @@
   "name": "space",
   "app_id": "",
   "gulpStartupTasks": [
-    "sass",
+    "build",
     "watch"
   ],
   "watchPatterns": [
-    "www/**/*",
-    "!www/lib/**/*"
+    "www/**/*"
   ]
 }

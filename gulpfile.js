@@ -19,9 +19,13 @@ var del = require('del');
 var paths = {
     sass: ['./scss/**/*.scss'],
     src: {
-        bower: './bower_components'
+        bower: './bower_components',
+        bowerJs: './bower_components/**/*.js',
+        bowerFonts: './bower_components/**/fonts/**/*.js',
+        bowerHtml: './bower_components/**/*.html'
     },
     dest: {
+        all: 'www/**',
         lib: 'www/lib',
         js: 'www/js',
         css: 'www/css',
@@ -40,16 +44,16 @@ var fns = {
         var paths = [];
         if (underscore.isArray(pathObj)) {
             underscore.each(pathObj, function (path) {
-                underscore.each(exts, function(ext) {
-                    if (underscoreStr.endsWith(path, ext)) {
+                underscore.each(exts, function (ext) {
+                    if (underscoreStr.endsWith(path, ext) || underscoreStr.endsWith(path, '**')) {
                         paths.push(path);
                     }
                 });
             });
         }
         else {
-            underscore.each(exts, function(ext) {
-                if (underscoreStr.endsWith(pathObj, ext)) {
+            underscore.each(exts, function (ext) {
+                if (underscoreStr.endsWith(pathObj, ext) || underscoreStr.endsWith(pathObj, '**')) {
                     paths.push(pathObj);
                 }
             });
@@ -59,12 +63,6 @@ var fns = {
 };
 
 var options = {
-    bowerFiles: function (overrides) {
-        return underscore.extend({
-            debugging: false,
-            paths: './'
-        }, overrides);
-    },
     gulpSrc: function (overrides) {
         return underscore.extend({
             read: false
@@ -78,40 +76,59 @@ var options = {
     }
 };
 
-gulp.task('default', ['clean', 'sass', 'deploy-bower-scripts', 'deploy-bower-templates', 'index']);
+gulp.task('default', ['sass']);
 
-gulp.task('clean', function (cb) {
-    del(['build'], cb);
+gulp.task('build', ['inject-index']);
+
+gulp.task('clean', function (done) {
+    del(['www/lib/**'], function (err, deletedFiles) {
+        console.log('Files deleted: ', deletedFiles.join(', '));
+        done();
+    });
 });
 
-gulp.task('index', function () {
+gulp.task('inject-index', ['deploy-bower'], function (done) {
     var target = gulp.src('./www/index.html');
     var sources = gulp.src([
         './www/**/*.js', './www/**/*.css', './www/**/*.js.map', './www/**/*.css.map',
-        '!./www/lib/ionic/**', '!./www/**/*.min.js', '!./www/**/*.min.css'], options.gulpSrc())
-        .pipe(order(['**/d3/**', '**/jquery/**', '**/lib/**', '**/css/**', '**/js/**']));
-    return target.pipe(inject(sources, options.inject()))
-        .pipe(gulp.dest('./www'));
+        '!./www/**/*.min.css'], options.gulpSrc())
+        .pipe(order([
+            '**/ionic.js', '**/angular.js',
+            '**/angular-animate.js', '**/angular-sanitize.js', '**/angular-ui-router.js',
+            '**/ionic-angular.js',
+            '**/d3/**', '**/jquery/**', '**/lib/**', '**/css/**', '**/js/**']));
+    target.pipe(inject(sources, options.inject()))
+        .pipe(gulp.dest('./www'))
+        .on('end', done);
 });
 
-gulp.task('deploy-bower-scripts', function () {
-    /*
-     var bowerJs = gulp.src(bowerFiles(options.bowerFiles()), options.gulpSrc());
-     bowerJs.pipe(gulp.dest('./dist'));
-     */
+gulp.task('deploy-bower', ['sass', 'deploy-bower-scripts', 'deploy-bower-fonts', 'deploy-bower-templates']);
+
+gulp.task('deploy-scss', ['clean'], function(done) {
+    gulp.src(paths.src.bower + '/ionic/scss/**').pipe(gulp.dest('./www/lib/ionic/scss'))
+        .on('end', done);
+});
+
+gulp.task('deploy-bower-fonts', ['clean'], function (done) {
+    gulp.src(paths.src.bower + '/ionic/fonts/**').pipe(gulp.dest('./www/lib/ionic/fonts'))
+        .on('end', done);
+});
+
+gulp.task('deploy-bower-scripts', ['clean'], function (done) {
     underscore.each(fns.getBowerDependencies(), function (value, bowerName) {
         var srcBowerDir = paths.src.bower + '/' + bowerName + '/';
         var srcBowerFile = require(srcBowerDir + 'bower.json');
-        var srcPaths = fns.toFilteredArray(srcBowerFile.main, ['.js', '.js.map', '.css']);
+        var srcPaths = fns.toFilteredArray(srcBowerFile.main, ['.js', '.js.map', '.bundle.js', '.css', '.scss']);
         underscore.each(srcPaths, function (path) {
             var outputPath = paths.dest.lib + '/' + bowerName;
             gulp.src(srcBowerDir + path)
                 .pipe(gulp.dest(outputPath));
         });
     });
+    done();
 });
 
-gulp.task('deploy-bower-templates', function () {
+gulp.task('deploy-bower-templates', function (done) {
     underscore.each(fns.getBowerDependencies(), function (value, bowerName) {
         var srcBowerDir = paths.src.bower + '/' + bowerName + '/';
         var srcBowerFile = require(srcBowerDir + 'bower.json');
@@ -121,9 +138,10 @@ gulp.task('deploy-bower-templates', function () {
                 .pipe(gulp.dest(paths.dest.templates));
         });
     });
+    done();
 });
 
-gulp.task('sass', function (done) {
+gulp.task('sass', ['deploy-scss'], function (done) {
     gulp.src('./scss/ionic.app.scss')
         .pipe(sass())
         .pipe(gulp.dest(paths.dest.css))
@@ -135,15 +153,15 @@ gulp.task('sass', function (done) {
         .on('end', done);
 });
 
-gulp.task('bower', function (cb) {
+gulp.task('bower', function (done) {
     bower.commands.install([], {save: true}, {})
-        .on('end', function (installed) {
-            cb();
-        })
+        .on('end', done);
 });
 
 gulp.task('watch', function () {
     gulp.watch(paths.sass, ['sass']);
+    /*gulp.watch(paths.src.bowerJs, ['deploy-bower-scripts']);
+    gulp.watch(paths.src.bowerHtml, ['deploy-bower-templates']);*/
 });
 
 gulp.task('install', ['git-check'], function () {

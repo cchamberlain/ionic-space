@@ -1,7 +1,6 @@
 var express = require('express'),
     app = express();
 
-app.use(express.static('bower_components'));
 app.use(express.static('www'));
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
